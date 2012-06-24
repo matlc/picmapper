@@ -1,3 +1,17 @@
+// TODO
+// upload to github
+// clone to linode; test
+// refactor
+// clean up comments
+// look up .gitignore/.gitkeep for images folder
+// handle/parse daphne's photo formats
+// add error handling if photos don't have gps data
+// add images to infowindow in gmaps; scale down
+// make photos uploadable
+// funtion that checks images; deletes older than an hour; cronjob?
+// make 'keep' image folder so doesn't delete
+
+
 
 var exif = require('./exifreader');
 // exif.readFiles();
