@@ -33,7 +33,7 @@ module.exports = new EventEmitter();
 			console.log('info value: ', info);
 			getGPS(path, image, info, function (loc, info, image) {
 				console.log('inside callback image: ', image);
-				console.log('image: ' + image + ' - ' + JSON.stringify(loc));
+				console.log('image: ',  image, ' - ', JSON.stringify(loc));
 				info[image] = loc;
 				// console.log('forEach done');
 				if (++count === dir.length) {
@@ -68,6 +68,7 @@ module.exports = new EventEmitter();
 				'long'    : [longitude,longref],
 			};
 			var converted = formatLatLong(latlong);
+			converted[path] = path;
 			callback(converted, info, image);
 		});
 	}

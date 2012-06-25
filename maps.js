@@ -41,7 +41,7 @@ function makeMarkers (points) {
       position: new google.maps.LatLng(points[key].lat, points[key].long),
       map: map,
       title:key,
-      html:key
+      html:(points[key].path + '/' + key)
     });
     markers.push(mark);
   }
