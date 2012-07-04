@@ -54,7 +54,7 @@ function start (points) {
         res.render('index.jade', {title: 'maps', points: points});
     });
 
-    app.listen(3000);
+    app.listen(1234, '50.116.52.79');
     console.log('server is running');
 
 

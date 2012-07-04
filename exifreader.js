@@ -6,7 +6,7 @@ module.exports = new EventEmitter();
 
 // function readFiles() {
 	// console.log(val);
-	var path = '/Users/mat/Dropbox/code/nodejs/mapper/images'; //path to folder of images
+	var path = './images'//path to folder of images
 	// var path = '/Users/mcluttermbp/Dropbox/code/nodejs/mapper/images'; //path to folder of images
 	var dir = fs.readdirSync(path);
 	
