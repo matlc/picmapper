@@ -1,6 +1,6 @@
 // TODO
-// upload to github
-// clone to linode; test
+// upload to github - DONE
+// clone to linode; test - DONE
 // refactor
 // clean up comments
 // look up .gitignore/.gitkeep for images folder
