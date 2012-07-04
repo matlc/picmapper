@@ -96,18 +96,34 @@ module.exports = new EventEmitter();
 	function convertLatLong (point) {
 		// console.log(point);
 		var parts = point.split(',');
+		var times = {};
 		var d = parts[0].trim();
 		var m = parts[1].trim();
 		var s = parts[2].trim();
-		// console.log('m:' + m);
-		var decimal = parseInt(d) + parseInt(m)/60 + parseInt(s)/3600;
+		var times = {
+			'd': d,
+			'm': m,
+			's': s
+		};
+		for (var time in times) {
+			if (times.hasOwnProperty(time)) {
+				var new_time = divide(times[time]);
+				times[time] = new_time;
+			}
+		}
+		//times = divide(times);
+		//console.log('parts:', parts);
+		
+		var decimal = times['d'] + times['m']/60 + times['s']/3600;
 		return decimal.toString();
 	}
 
-	function divide (argument) {
-		// body...
-	}
-
+	function divide (time) {
+		var operators = time.split('/');
+		var product = Number(operators[0]) / Number(operators[1]);
+		return product;
+	} 
+	
 	function checkDirection (ref, decimal) {
 		var d = decimal;
 		if (ref === 'S' || ref === 'W') {

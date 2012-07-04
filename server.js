@@ -4,7 +4,7 @@
 // refactor
 // clean up comments
 // look up .gitignore/.gitkeep for images folder
-// handle/parse daphne's photo formats
+// handle/parse daphne's photo formats - DONE
 // add error handling if photos don't have gps data
 // add images to infowindow in gmaps; scale down
 // make photos uploadable
