@@ -47,6 +47,7 @@ function start (points) {
     var app = require('express').createServer();
 
     app.set('views', __dirname + '/views');
+    app.set('images', __dirname + '/images');
 
     // app.use(app.static(__dirname + '/../public'));
 

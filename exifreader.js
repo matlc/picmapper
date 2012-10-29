@@ -56,6 +56,7 @@ module.exports = new EventEmitter();
 		console.log('inside getGPS image: ', image);
 		im.readMetadata((path + '/' + image), function (err, metadata) {
 			if (err) throw err;
+			console.log('getting data for:', image);
 			var lat       = metadata.exif.gpsLatitude;
 			var latref    = metadata.exif.gpsLatitudeRef;
 			var longitude = metadata.exif.gpsLongitude;
@@ -68,7 +69,7 @@ module.exports = new EventEmitter();
 				'long'    : [longitude,longref],
 			};
 			var converted = formatLatLong(latlong);
-			converted[path] = path;
+			converted['path'] = path;
 			callback(converted, info, image);
 		});
 	}

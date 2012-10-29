@@ -1,5 +1,5 @@
 div#map
-
+img(src='images/ferris.jpg')
 script
     var points = !{JSON.stringify(points)};
 
@@ -42,11 +42,14 @@ script
       for (var key in points) {
         //- console.log(key);
         console.log(points[key]);
+        var imagesrc = '<div><img border="0" align="left" width="50" src="' + './images' + '/' + key + '"/></div> Also this';
+        console.log(imagesrc);
+        //var imagesrc = "hello";
         var mark = new google.maps.Marker({
           position: new google.maps.LatLng(points[key].lat, points[key].long),
           map: map,
           title:key,
-          html:key,
+          html:imagesrc,
           animation: google.maps.Animation.DROP
         });
         markers.push(mark);
