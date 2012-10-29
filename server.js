@@ -16,10 +16,12 @@
 var exif = require('./exifreader');
 // exif.readFiles();
 
+var serverIP = process.argv[2];
+
 exif.on('ready', function() {
     // console.log('not starting server');
     console.log('printing final: ', exif.points);
-    start(exif.points);
+    start(exif.points, serverIP);
 })
 // var exif = require('./exifreader');
 // // var val = 'flip';
@@ -38,7 +40,7 @@ exif.on('ready', function() {
 
 // // start(points);
 
-function start (points) {
+function start (points, ip) {
 
     // var lat = points['little.jpg']['lat'];
     // var longitude = points['little.jpg']['long'];
@@ -55,8 +57,8 @@ function start (points) {
         res.render('index.jade', {title: 'maps', points: points});
     });
 
-    app.listen(1234, '50.116.52.79');
-    console.log('server is running');
+    app.listen(1234, ip);
+    console.log('server is running: ', ip);
 
 
     // console.log(points);
