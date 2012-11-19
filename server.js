@@ -53,11 +53,11 @@ function start (points, ip) {
 
     // app.use(app.static(__dirname + '/../public'));
 
-    app.get('/', function (req, res) {
+    app.get('/picmapper', function (req, res) {
         res.render('index.jade', {title: 'maps', points: points});
     });
 
-    app.listen(1234, ip);
+    app.listen(5252, ip);
     console.log('server is running: ', ip);
 
 
